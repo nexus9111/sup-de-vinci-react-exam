@@ -1,0 +1,14 @@
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.category {
+    color: #388dfe;
+    text-decoration: none;
+}
+
+.category:hover {
+    color: #7fb6fe;
+}
