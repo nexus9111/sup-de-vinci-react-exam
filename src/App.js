@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Footer from './components/Footer';
-import MealCategoryList from './pages/CategoryList';
 
 import Home from './pages/Home';
 import MealByCategory from './pages/MealByCategory';
+import MealCategoryList from './pages/CategoryList';
 import MealDetail from './pages/MealDetail';
 import MealList from './pages/MealList';
 import MealSearch from './pages/MealSearch';
 
 function App() {
-
   return (
     <BrowserRouter>
       <div className="content-layout">

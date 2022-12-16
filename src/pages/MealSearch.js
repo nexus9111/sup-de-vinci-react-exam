@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
-import LittleMealCard from "../components/LittleMealCard";
-import fetcher from "../lib/apiFetcher";
-import '../styles/MealPage.css'
-import '../styles/MealCard.css'
 import { useParams } from "react-router";
+
+import fetcher from "../lib/apiFetcher";
+
+import LittleMealCard from "../components/LittleMealCard";
 import Header from "../components/Header";
+import Loading from "../components/Loading";
+
+import '../styles/MealCard.css'
+import '../styles/MealPage.css'
 
 const MealSearch = () => {
     const { name } = useParams();
@@ -35,7 +39,7 @@ const MealSearch = () => {
                     )}
                 </>
             ) : (
-                <h3>Loading...</h3>
+                <Loading />
             )}
 
         </>

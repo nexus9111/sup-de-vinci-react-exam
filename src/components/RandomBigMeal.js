@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+
 import fetcher from '../lib/apiFetcher';
 
 import BigMealCard from './BigMealCard';
+import Loading from './Loading';
 
 const RandomBigMeal = () => {
     const [meal, setmeal] = useState();
@@ -15,10 +17,10 @@ const RandomBigMeal = () => {
 
     return (
         <>
-            {meal && (
-                <>
-                    <BigMealCard meal={meal} />
-                </>
+            {meal ? (
+                <BigMealCard meal={meal} />
+            ) : (
+                <Loading />
             )}
         </>
     );

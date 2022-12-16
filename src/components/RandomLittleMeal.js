@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+
 import fetcher from '../lib/apiFetcher';
 
 import LittleMealCard from './LittleMealCard';
+import Loading from './Loading';
 
 const RandomLittleMeal = () => {
     const [meal, setmeal] = useState();
@@ -15,10 +17,10 @@ const RandomLittleMeal = () => {
 
     return (
         <>
-            {meal && (
-                <>
-                    <LittleMealCard meal={meal} />
-                </>
+            {meal ? (
+                <LittleMealCard meal={meal} />
+            ) : (
+                <Loading />
             )}
         </>
     );

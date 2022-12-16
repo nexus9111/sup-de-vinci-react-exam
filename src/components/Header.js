@@ -20,9 +20,9 @@ const Header = () => {
         <>
             <div className="header">
                 <div className="header-left">
-                    {paths.map((path, index) => {
+                    {paths.map((path) => {
                         return (
-                            <Link className="header-navigation" to={path.path} key={index}>{path.name}</Link>
+                            <Link className="header-navigation" to={path.path} key={path.path}>{path.name}</Link>
                         )
                     })}
                 </div>

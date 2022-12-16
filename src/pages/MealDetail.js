@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+
+import fetcher from "../lib/apiFetcher";
+
 import DisplayMeal from "../components/DisplayMeal";
 import Header from "../components/Header";
-import fetcher from "../lib/apiFetcher";
+import Loading from "../components/Loading";
+
 import '../styles/MealPage.css'
 
 const MealDetail = () => {
@@ -19,8 +23,10 @@ const MealDetail = () => {
     return (
         <>
             <Header />
-            {meal && (
+            {meal ? (
                 <DisplayMeal meal={meal} />
+            ) : (
+                <Loading />
             )}
         </>
     );

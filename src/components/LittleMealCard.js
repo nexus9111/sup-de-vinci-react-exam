@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
+
 import '../styles/MealCard.css';
 
 const LittleMealCard = (props) => {
-
     const mealUrl = "/meal/id/" + props.meal.idMeal
 
     return (

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+
 import Header from "../components/Header";
 import fetcher from "../lib/apiFetcher";
 
@@ -21,18 +22,17 @@ const MealCategoryList = () => {
         <>
             <Header />
             <ul>
-            {categories ? (
-                categories.map((category) => (
-                    // <li key={category.idCategory}>{category.strCategory}</li>
-                    <li>
-                        <Link className="category" to={`/meal/categories/${category.strCategory}`} key={category.idCategory}>{category.strCategory}</Link>
-                    </li>
-                ))
-            ) : (
-                <h3>Loading...</h3>
-            )}
+                {categories ? (
+                    categories.map((category) => (
+                        <li>
+                            <Link className="category" to={`/meal/categories/${category.strCategory}`} key={category.idCategory}>{category.strCategory}</Link>
+                        </li>
+                    ))
+                ) : (
+                    <h3>Loading...</h3>
+                )}
             </ul>
-            
+
         </>
     );
 }

@@ -1,18 +1,8 @@
+import mealUtils from '../lib/mealUtils';
+
 import '../styles/MealPage.css';
 
 const DisplayMeal = (props) => {
-    const getIngredients = (meal) => {
-        let ingredients = [];
-        for (const key in meal) {
-            if (key.includes('strIngredient') && meal[key]) {
-                ingredients.push(meal[key]);
-            }
-        }
-        // make all ingredients unique
-        ingredients = [...new Set(ingredients)];
-        return ingredients;
-    }
-
     return (
         <div class="page">
             <img class="page-image" src={props.meal.strMealThumb} alt=" de la page" />
@@ -23,7 +13,7 @@ const DisplayMeal = (props) => {
 
             </div>
             <ul class="page-ingredients">
-                {getIngredients(props.meal).map((ingredient) => (
+                {mealUtils.getIngredients(props.meal).map((ingredient) => (
                     <li key={ingredient}>{ingredient}</li>
                 ))}
             </ul>

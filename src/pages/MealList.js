@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
-import LittleMealCard from "../components/LittleMealCard";
+
 import fetcher from "../lib/apiFetcher";
+
+import LittleMealCard from "../components/LittleMealCard";
+import Header from "../components/Header";
+import Loading from "../components/Loading";
+
 import '../styles/MealPage.css'
 import '../styles/MealCard.css'
-import Header from "../components/Header";
 
 const MealList = () => {
     const [meals, setmeals] = useState([]);
@@ -18,12 +22,14 @@ const MealList = () => {
     return (
         <>
             <Header />
-            {meals && (
+            {meals ? (
                 <div className="cards">
                     {(meals.map((meal) => (
                         <LittleMealCard meal={meal} />
                     )))}
                 </div>
+            ) : (
+                <Loading />
             )}
         </>
     );

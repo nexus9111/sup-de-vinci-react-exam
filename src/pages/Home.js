@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom';
+
 import Header from '../components/Header';
 import RandomBigMeal from '../components/RandomBigMeal';
 import RandomLittleMeal from '../components/RandomLittleMeal';
+
 import '../styles/MealCard.css'
 
 const Home = () => {
     return (
         <>
-        <Header />
-        <RandomBigMeal />
+            <Header />
+            <RandomBigMeal />
             <div className="cards">
                 <RandomLittleMeal />
                 <RandomLittleMeal />

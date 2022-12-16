@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+
+import fetcher from "../lib/apiFetcher";
+
 import DisplayMealByCategory from "../components/DisplayMealByCategory";
 import Header from "../components/Header";
-import fetcher from "../lib/apiFetcher";
+import Loading from "../components/Loading";
+
 import '../styles/MealPage.css'
 
 const MealByCategory = () => {
@@ -20,12 +24,14 @@ const MealByCategory = () => {
     return (
         <>
             <Header />
-            {meal && (
+            {meal ? (
                 <div className="cards">
                     {(meal.map((meal) => (
                         <DisplayMealByCategory meal={meal} />
                     )))}
                 </div>
+            ) : (
+                <Loading />
             )}
         </>
     );
